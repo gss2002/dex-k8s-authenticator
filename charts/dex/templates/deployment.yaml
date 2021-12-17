@@ -62,6 +62,8 @@ spec:
               name: {{ template "dex.fullname" $ }}
               key: {{ template "dex.envkey" $key }}
         {{- end }}
+        - name: KUBERNETES_POD_NAMESPACE
+          value: dex
         ports:
         - name: http
           containerPort: 5556
